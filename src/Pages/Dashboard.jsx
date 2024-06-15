@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function Dashboard() {
   return (
-    <div className='flex justify-center items-center'>
-      Welcome to StudyNotion
+    <div className="flex justify-center items-center h-screen w-full text-white text-3xl">
+      Welcome to Studynotion!
     </div>
-  )
+  );
 }
 
 export default Dashboard;

@@ -9,7 +9,7 @@ function Signup({ setIsLoggedIn }) {
       {/* we are seding them as a prop to the template */}
 
       <Template
-        title="Welcome Back"
+        title="Join  the millions learning to code with StudyNotion for free"
         desc1="Build skills for today,tomorrow, and beyond."
         desc2="Education to future-proof your career."
         image={signupImg}
