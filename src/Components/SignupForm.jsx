@@ -4,8 +4,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 function SignupForm({ setIsLoggedIn }) {
-
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -25,18 +24,17 @@ function SignupForm({ setIsLoggedIn }) {
     }));
   }
 
-  function submitHandler(event)
-  {
+  function submitHandler(event) {
     event.preventDefault();
-    if(formData.password!=formData.confirmPassword){
-      toast.error("Password do not match")
+    if (formData.password != formData.confirmPassword) {
+      toast.error("Password do not match");
       return;
     }
 
     setIsLoggedIn(true);
     toast.success("Account Created");
-    const accountData={
-      ...formData
+    const accountData = {
+      ...formData,
     };
     console.log(accountData);
 
@@ -113,6 +111,7 @@ function SignupForm({ setIsLoggedIn }) {
               placeholder="Enter Password"
               value={formData.password}
             />
+            {/* this is for the eye toggle button if we click on it , it shows the password*/}
             <span onClick={() => setShowPassword((prev) => !prev)}>
               {!showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
             </span>
@@ -132,7 +131,9 @@ function SignupForm({ setIsLoggedIn }) {
               placeholder="Confirm Password"
               value={formData.confirmPassword}
             />
+            {/* this is for the eye toggle button if we click on it changes the value of showPassword to true */}
             <span onClick={() => setShowConfirmPassword((prev) => !prev)}>
+              {/* below when the showConfirmPassword is true which can be changed using the click on it */}
               {!showConfirmPassword ? (
                 <AiOutlineEye />
               ) : (

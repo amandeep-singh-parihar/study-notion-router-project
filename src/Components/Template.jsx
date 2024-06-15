@@ -4,6 +4,7 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 
 function Template({ title, desc1, desc2, image, formtype, setIsLoggedIn }) {
+  // accepts the props by which the image will automatically appeart according to the login OR signup page
   return (
     <div>
       <div>

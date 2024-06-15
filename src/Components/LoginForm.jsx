@@ -11,6 +11,7 @@ function LoginForm({ setIsLoggedIn }) {
     password: "",
   });
 
+  // intially password must be hidden
   const [showPassword, setShowPassword] = useState(false);
 
   function changeHandler(event) {
@@ -48,6 +49,7 @@ function LoginForm({ setIsLoggedIn }) {
           Password<sup>*</sup>
         </p>
         <input
+          // if the showpassword is true we can see the password but if it is false then we can see the dots 
           type={showPassword ? "text" : "password"}
           required
           name="password"
@@ -55,6 +57,7 @@ function LoginForm({ setIsLoggedIn }) {
           onChange={changeHandler}
           placeholder="Enter Password"
         />
+        {/* this is for the eye toggle button if we click on it , it shows the passwors */}
         <span onClick={() => setShowPassword((prev) => !prev)}>
           {!showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
         </span>

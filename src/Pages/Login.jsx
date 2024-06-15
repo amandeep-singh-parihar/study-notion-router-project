@@ -5,6 +5,9 @@ import loginImg from "../assets/login.png";
 function Login({ setIsLoggedIn }) {
   return (
     <div>
+      {/* below are the basic tampletes for both sign up and log in page but here this is for login page */}
+      {/* we are seding them as a prop to the template */}
+
       <Template
         title="Welcome Back"
         desc1="Build skills for today,tomorrow, and beyond."

@@ -11,6 +11,7 @@ function Navbar({ setIsLoggedIn, isLoggedIn }) {
       </Link>
 
       <nav>
+        {/* Home , about , contact on the navbar for now all links to the homepage */}
         <ul className="flex gap-3">
           <li>
             <Link to="/">Home</Link>
@@ -24,17 +25,26 @@ function Navbar({ setIsLoggedIn, isLoggedIn }) {
         </ul>
       </nav>
 
+      {/* four buttons on the navbar on the rightside but we can only view two at a time on the condition of login or logout */}
+      {/* if we are loggedout than Login and Sign Up button will appear */}
+      {/* if we are loggedIn than log Out and Dashboard button will appear */}
       <div className="flex ml-5 gap-3">
+        {/* isLoggedIn is false and ! of it is True so it show Login intially */}
+
         {!isLoggedIn && (
           <Link to="/login">
             <button>Login</button>
           </Link>
         )}
+        {/* isLoggedIn is false and ! of it is True so it show Sign up intially */}
+
         {!isLoggedIn && (
           <Link to="/signup">
             <button>Sign Up</button>
           </Link>
         )}
+
+        {/* these button only appear when we are loggedIn and on clicking then we can make logged out->which we can be done using setIsloogedIn(false) */}
         {isLoggedIn && (
           <Link to="/">
             <button

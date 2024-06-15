@@ -8,6 +8,7 @@ import Dashboard from './Pages/Dashboard'
 
 function App() {
 
+  // initiall we were logged out
   const [isLoggedIn,setIsLoggedIn]=useState(false);
 
   return (
