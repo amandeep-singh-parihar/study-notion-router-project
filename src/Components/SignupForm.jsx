@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 function SignupForm({ setIsLoggedIn }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   });
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [accountType, setAccountType] = useState("student");
+  const [accountType, setAccountType] = useState('student');
 
   function changeHandler(event) {
     setFormData((prev) => ({
@@ -28,12 +28,12 @@ function SignupForm({ setIsLoggedIn }) {
   function submitHandler(event) {
     event.preventDefault();
     if (formData.password != formData.confirmPassword) {
-      toast.error("Password do not match");
+      toast.error('Password do not match');
       return;
     }
 
     setIsLoggedIn(true);
-    toast.success("Account Created");
+    toast.success('Account Created');
     const accountData = {
       ...formData,
     };
@@ -45,7 +45,7 @@ function SignupForm({ setIsLoggedIn }) {
 
     console.log(finalData);
 
-    navigate("/dashboard");
+    navigate('/dashboard');
   }
 
   return (
@@ -54,22 +54,22 @@ function SignupForm({ setIsLoggedIn }) {
       <div className="flex bg-[#bebebe]/[0.2] p-1 gap-x-1 my-6 rounded-full max-w-max">
         <button
           className={`py-2 px-5 rounded-full transition-all duration-200 ${
-            accountType === "student"
-              ? "bg-[#040b15]/[1] text-[#bebebe]"
-              : "bg-transparent text-[#bebebe]/[0.5]"
+            accountType === 'student'
+              ? 'bg-[#040b15]/[1] text-[#bebebe]'
+              : 'bg-transparent text-[#bebebe]/[0.5]'
           }`}
-          onClick={() => setAccountType("student")}
+          onClick={() => setAccountType('student')}
         >
           Student
         </button>
 
         <button
           className={`py-2 px-5 rounded-full transition-all duration-200 ${
-            accountType === "instructor"
-              ? "bg-[#040b15]/[1] text-[#bebebe]"
-              : "bg-transparent text-[#bebebe]/[0.5]"
+            accountType === 'instructor'
+              ? 'bg-[#040b15]/[1] text-[#bebebe]'
+              : 'bg-transparent text-[#bebebe]/[0.5]'
           }`}
-          onClick={() => setAccountType("instructor")}
+          onClick={() => setAccountType('instructor')}
         >
           Instructor
         </button>
@@ -138,7 +138,7 @@ function SignupForm({ setIsLoggedIn }) {
             </p>
             <input
               className="bg-[#bebebe]/[0.2] rounded-[0.5rem] text-[#bebebe] w-full p-[12px] border-b-[.1px] border-[#bebebe]"
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? 'text' : 'password'}
               required
               name="password"
               onChange={changeHandler}
@@ -166,7 +166,7 @@ function SignupForm({ setIsLoggedIn }) {
             </p>
             <input
               className="bg-[#bebebe]/[0.2] rounded-[0.5rem] text-[#bebebe] w-full p-[12px] border-b-[.1px] border-[#bebebe]"
-              type={showConfirmPassword ? "text" : "password"}
+              type={showConfirmPassword ? 'text' : 'password'}
               required
               name="confirmPassword"
               onChange={changeHandler}

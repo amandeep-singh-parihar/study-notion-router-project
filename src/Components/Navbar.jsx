@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/Logo.svg";
-import { toast } from "react-hot-toast";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/Logo.svg';
+import { toast } from 'react-hot-toast';
 
 function Navbar({ setIsLoggedIn, isLoggedIn }) {
   return (
@@ -15,6 +15,10 @@ function Navbar({ setIsLoggedIn, isLoggedIn }) {
         <ul className="flex gap-x-6 text-[#bebebe]">
           <li>
             <Link to="/">Home</Link>
+            {/* Link in Navbar.jsx (Navigation Links)
+
+              <Link> creates client-side navigation without reloading the page.
+              Clicking on <Link to="/">Home</Link> updates the URL to / and renders the corresponding component based on <Routes> in App.jsx. */}
           </li>
           <li>
             <Link to="/">About</Link>
@@ -24,6 +28,12 @@ function Navbar({ setIsLoggedIn, isLoggedIn }) {
           </li>
         </ul>
       </nav>
+      {/* The <Link> tag changes the URL to whatever is inside to="".
+      Based on the updated URL, the corresponding <Route> inside <Routes> renders the correct component. */}
+
+      {/* When clicked, the URL becomes /dashboard.
+        In App.jsx, the <Route path="/dashboard" element={<Dashboard />} /> matches this URL.
+        So, <Dashboard /> gets rendered. */}
 
       {/* four buttons on the navbar on the rightside but we can only view two at a time on the condition of login or logout */}
       {/* if we are loggedout than Login and Sign Up button will appear */}
@@ -55,7 +65,7 @@ function Navbar({ setIsLoggedIn, isLoggedIn }) {
               className=" bg-[#7e858a]/[0.2] text-[#bebebe] py-[8px] px-[12px] rounded-[8px] border border-[#7e858a]/[0.1]"
               onClick={() => {
                 setIsLoggedIn(false);
-                toast.success("Logged Out");
+                toast.success('Logged Out');
               }}
             >
               Log out

@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import toast from "react-hot-toast";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import toast from 'react-hot-toast';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LoginForm({ setIsLoggedIn }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   // intially password must be hidden
@@ -24,8 +24,8 @@ function LoginForm({ setIsLoggedIn }) {
   function submitHandler(event) {
     event.preventDefault();
     setIsLoggedIn(true);
-    toast.success("Logged In");
-    navigate("/dashboard");
+    toast.success('Logged In');
+    navigate('/dashboard');
   }
 
   return (
@@ -36,9 +36,7 @@ function LoginForm({ setIsLoggedIn }) {
       <label className="w-full">
         <p className="text-[0.875rem] text-[#bebebe] mb-1 leading-[1.375rem">
           Email Address
-          <sup className="text-rose-400">
-            *
-          </sup>
+          <sup className="text-rose-400">*</sup>
         </p>
         <input
           className="bg-[#bebebe]/[0.2] rounded-[0.5rem] text-[#bebebe] w-full p-[12px] border-b-[.1px] border-[#bebebe]"
@@ -54,14 +52,12 @@ function LoginForm({ setIsLoggedIn }) {
       <label className="w-full relative">
         <p className="text-[0.875rem] text-[#bebebe] mb-1 leading-[1.375rem">
           Password
-          <sup className="text-rose-400">
-            *
-          </sup>
+          <sup className="text-rose-400">*</sup>
         </p>
         <input
           // if the showpassword is true we can see the password but if it is false then we can see the dots
           className="bg-[#bebebe]/[0.2] rounded-[0.5rem] text-[#bebebe] w-full p-[12px] border-b-[.1px] border-[#bebebe]"
-          type={showPassword ? "text" : "password"}
+          type={showPassword ? 'text' : 'password'}
           required
           name="password"
           value={formData.password}
@@ -69,26 +65,25 @@ function LoginForm({ setIsLoggedIn }) {
           placeholder="Enter Password"
         />
         {/* this is for the eye toggle button if we click on it , it shows the passwors */}
-        <span 
+        <span
           className="absolute right-3 top-[38px] cursor-pointer text-[#bebebe]"
-          onClick={() => setShowPassword((prev) => !prev)}>
-          {!showPassword ?
-
-              <AiOutlineEye fontSize={24} fill="#AFB2BF"/> : 
-
-              <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF"/>}
+          onClick={() => setShowPassword((prev) => !prev)}
+        >
+          {!showPassword ? (
+            <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+          ) : (
+            <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+          )}
         </span>
 
         <Link to="#">
           <p className="text-xs mt-1 text-blue-300 max-w-max ml-auto">
-              Forgot Password
+            Forgot Password
           </p>
         </Link>
       </label>
 
-      <button
-        className="flex items-center justify-center bg-yellow-500 rounded-[8px] font-medium px-[12px] py-[8px] mt-6"
-        >
+      <button className="flex items-center justify-center bg-yellow-500 rounded-[8px] font-medium px-[12px] py-[8px] mt-6">
         Sign In
       </button>
     </form>

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import Navbar from "./Components/Navbar";
-import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
-import Dashboard from "./Pages/Dashboard";
-import "./App.css";
-import PrivateRoute from "./Components/PrivateRoute";
+import React, { useState } from 'react';
+import Navbar from './Components/Navbar';
+import { Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+import Signup from './Pages/Signup';
+import Dashboard from './Pages/Dashboard';
+import './App.css';
+import PrivateRoute from './Components/PrivateRoute';
 
 function App() {
   // initialy we were logged out

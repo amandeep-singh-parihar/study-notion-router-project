@@ -1,6 +1,6 @@
-import React from "react";
-import Template from "../Components/Template";
-import signupImg from "../assets/signup.png";
+import React from 'react';
+import Template from '../Components/Template';
+import signupImg from '../assets/signup.png';
 
 function Signup({ setIsLoggedIn }) {
   return (
